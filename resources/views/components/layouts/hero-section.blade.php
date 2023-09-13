@@ -2,7 +2,7 @@
 <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
     <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
         <div class="sm:max-w-lg">
-            <h1 class="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Semana do Cliente</h1>
+            <h1 class="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Camisetas personalizadas</h1>
             <p class="mt-4 text-xl text-gray-500">Oportunidades que variam de 10% a 30% de descontos em todas as peças
                 da nossa loja.</p>
         </div>
