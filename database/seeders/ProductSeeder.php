@@ -18,14 +18,15 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::factory()
-            ->has(Sku::factory()
-                ->hasAttached(Feature::factory()->count(1), ['value' => '1'])
-                ->count(3)
+            ->has(
+                Sku::factory()
+                    ->hasAttached(Feature::factory()->count(1), ['value' => '1'])
+                    ->count(3)
             )
             ->count(5)
             ->create([
-                'brand_id' => Brand::first()->id,
-                'category_id' => Category::first()->id,
+                'brand_id' => Brand::inRandomOrder()->first()->id,
+                'category_id' => Category::inRandomOrder()->first()->id,
             ]);
     }
 }
