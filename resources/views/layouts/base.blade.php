@@ -17,15 +17,18 @@
     </style>
 
     @filamentStyles
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="antialiased">
+    {{-- @include('components.layouts.menu-mobile') --}}
+
 
     {{ $slot }}
 
-    @filamentScripts
-    @vite('resources/js/app.js')
+    @include('components.layouts.footer')
+
+    @livewireScriptConfig
 </body>
 
 </html>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Public\Home;
+use App\Livewire\Public\Category;
+use App\Livewire\Public\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name('public.home');
+Route::get('/category', Category::class)->name('public.category');
+Route::get('/product', Product::class)->name('public.product');
