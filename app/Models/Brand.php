@@ -12,13 +12,10 @@ class Brand extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'name',
-    ];
-
-    protected $casts = [
-        'is_visible' => 'boolean',
-    ];
+    public function scopeEnabled(Builder $query): Builder
+    {
+        return $query->where('is_enabled', true);
+    }
 
     public function products(): HasMany
     {

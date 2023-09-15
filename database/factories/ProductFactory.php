@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Brand;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,10 +22,14 @@ class ProductFactory extends Factory
         return [
 
             'brand_id' => Brand::inRandomOrder()->first()->id,
-            'name' => $this->faker->word(),
-            'description' => $this->faker->paragraph(1),
-            'slug' => $this->faker->slug(),
-            'technical_description' => $this->faker->paragraph(1)
+            'name' => $name = $this->faker->unique()->catchPhrase(),
+            'slug' => Str::slug($name),
+            'sort_description' => $this->faker->realText(),
+            'description' => $this->faker->realText(),
+            'is_enabled' => $this->faker->boolean(),
+            'published_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
+            'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
         ];
     }
 }

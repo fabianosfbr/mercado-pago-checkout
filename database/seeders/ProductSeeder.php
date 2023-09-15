@@ -17,16 +17,20 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+        $brands = Brand::all();
+        $categories = Category::all();
         Product::factory()
-            ->has(
-                Sku::factory()
-                    ->hasAttached(Feature::factory()->count(1), ['value' => '1'])
-                    ->count(3)
-            )
+            // ->has(
+            //     Sku::factory()
+            //         ->hasAttached(Feature::factory()->count(1), ['value' => '1'])
+            //         ->count(3)
+            // )
             ->count(5)
-            ->create([
-                'brand_id' => Brand::inRandomOrder()->first()->id,
-                'category_id' => Category::inRandomOrder()->first()->id,
-            ]);
+            ->create();
+
+        // Product::factory(1)
+        //     ->sequence(fn ($sequence) => ['brand_id' => $brands->random(1)->first()->id])
+        //     ->hasAttached($categories->random(rand(3, 6)), ['created_at' => now(), 'updated_at' => now()])
+        //     ->create();
     }
 }

@@ -14,14 +14,11 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
+            $table->string('description')->nullable();
             $table->string('website')->nullable();
-            $table->longText('description')->nullable();
             $table->unsignedSmallInteger('position')->default(0);
-            $table->boolean('is_visible')->default(false);
-            $table->string('seo_title', 60)->nullable();
-            $table->string('seo_description', 160)->nullable();
-            $table->integer('sort')->nullable();
+            $table->boolean('is_enabled')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

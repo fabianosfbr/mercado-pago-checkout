@@ -13,8 +13,43 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+
         Category::factory()
-            ->count(5)
-            ->create();
+            ->create([
+                'name' => 'Bandas',
+                'description' => 'Organiza conteúdo pelas bandas',
+                'position' => 1
+            ]);
+
+        Category::factory()
+            ->create([
+                'name' => 'Bonés',
+                'description' => 'Categoria de bonés',
+                'position' => 3
+            ]);
+        Category::factory()
+            ->create([
+                'name' => 'Masculino',
+                'description' => 'Categoria de conteúdo masculino',
+                'position' => 4
+            ]);
+        Category::factory()
+            ->create([
+                'name' => 'Feminino',
+                'description' => 'Categoria de conteúdo feminino',
+                'position' => 5
+            ]);
+        Category::factory()
+            ->create([
+                'name' => 'Infantil',
+                'description' => 'Categoria de conteúdo infantil',
+                'position' => 6
+            ]);
+        Category::factory()
+            ->create([
+                'name' => 'Livraria',
+                'description' => 'Categoria de conteúdo livraria',
+                'position' => 7
+            ]);
     }
 }
